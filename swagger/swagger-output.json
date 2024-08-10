@@ -1,0 +1,179 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Route Porter API",
+    "description": "Route Porter API 설명",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development server"
+    },
+    {
+      "url": "https://routeport.co.kr",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/chat": {
+      "post": {
+        "summary": "채팅 API 엔드포인트",
+        "description": "이 엔드포인트는 사용자 요청에 따라 추천 여행지를 제공합니다.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "성공적인 응답",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TravelRecommendations"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "잘못된 요청"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChatDto": {
+        "type": "object",
+        "properties": {
+          "schedule": {
+            "type": "string",
+            "description": "일정 정보"
+          },
+          "groupComposition": {
+            "type": "object",
+            "properties": {
+              "adults": {
+                "type": "integer",
+                "description": "성인 수"
+              },
+              "children": {
+                "type": "integer",
+                "description": "어린이 수"
+              },
+              "infants": {
+                "type": "integer",
+                "description": "유아 수"
+              }
+            },
+            "description": "상세 인원 정보"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "여행의 목적"
+          },
+          "duration": {
+            "type": "string",
+            "description": "여행 기간"
+          },
+          "budget": {
+            "type": "string",
+            "description": "여행 예산"
+          },
+          "climate": {
+            "type": "string",
+            "description": "선호하는 기후"
+          },
+          "keyElement": {
+            "type": "string",
+            "description": "여행 중 가장 중요하게 생각하는 요소"
+          },
+          "accommodation": {
+            "type": "string",
+            "description": "선호하는 숙박 시설"
+          },
+          "transport": {
+            "type": "string",
+            "description": "선호하는 이동 수단"
+          },
+          "companion": {
+            "type": "string",
+            "description": "동행자"
+          },
+          "favorite": {
+            "type": "string",
+            "description": "특히 마음에 들었던 여행지"
+          },
+          "favoriteReason": {
+            "type": "string",
+            "description": "마음에 들었던 이유"
+          },
+          "specialNeeds": {
+            "type": "string",
+            "description": "필요하거나 피하고 싶은 요소"
+          },
+          "recommendationType": {
+            "type": "string",
+            "description": "AI 추천 방식"
+          },
+          "freeTime": {
+            "type": "string",
+            "description": "여행 중 어느 정도의 자유 시간을 원하시나요?"
+          },
+          "importantFactors": {
+            "type": "string",
+            "description": "위 답변 중 가장 중요시 생각하는 단어"
+          }
+        },
+        "required": [
+          "schedule",
+          "groupComposition",
+          "purpose",
+          "duration",
+          "budget",
+          "climate",
+          "keyElement",
+          "accommodation",
+          "transport",
+          "companion",
+          "favorite",
+          "favoriteReason",
+          "specialNeeds",
+          "recommendationType",
+          "freeTime",
+          "importantFactors"
+        ]
+      },
+      "TravelRecommendations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "region": {
+              "type": "string",
+              "description": "지역명"
+            },
+            "district": {
+              "type": "string",
+              "description": "지역구"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "특징"
+            }
+          }
+        }
+      }
+    }
+  }
+}
