@@ -1,8 +1,8 @@
 import express from 'express';
-import { getTravelRouteHandler } from '../controllers/routeController.js';
+import {getDetailedRoute} from "../controllers/chatController.js";
 
 const router = express.Router();
 
-router.post('/routes', getTravelRouteHandler);
+router.post('/', getDetailedRoute);
 
 export default router;

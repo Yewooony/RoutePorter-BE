@@ -15,7 +15,12 @@ export class ChatDto {
         specialNeeds,
         recommendationType,
         freeTime,
-        importantFactors
+        importantFactors,
+       destination1,
+       destination2,
+       point1,
+       point2,
+       point3
     }) {
         this.schedule = schedule;             
         this.groupComposition = groupComposition;  
@@ -33,5 +38,10 @@ export class ChatDto {
         this.recommendationType = recommendationType;
         this.freeTime = freeTime;
         this.importantFactors = importantFactors;
+        this.destination1=destination1;
+        this.destination2=destination2;
+        this.point1=point1;
+        this.point2=point2;
+        this.point3=point3;
     }
 }

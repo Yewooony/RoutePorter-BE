@@ -43,6 +43,29 @@ class chatService {
   
         return recommendations;
     }
+    async getDetailedTravelInfo(travelPlan) {
+        const prompt = `
+        여행 계획: ${travelPlan.destination1} - ${travelPlan.destination2}
+        특징: ${travelPlan.point1}, ${travelPlan.point2}, ${travelPlan.point3}
+        
+
+        위에서 언급된 각 여행지에 대해 여행 루트를 작성합니다. 부가적인 말 없이 다음 정보를 다음과 같이 제공해 주세요:
+        [n일차]
+        - 해당 장소의 영업 시간 및 주변에 더 방문할만한 추천 명소
+        - 주변 인기 있는 메뉴 및 추천 맛집
+        - 특별한 방문 팁
+    `;
+
+        try {
+            const response = await chatProvider.getChatGPTResponse(prompt);
+            console.log('route:',response);
+            return response;
+        } catch (error) {
+            console.error('Detailed travel info error:', error.message);
+            throw error;
+        }
+    }
 }
+
 
 export default new chatService();
