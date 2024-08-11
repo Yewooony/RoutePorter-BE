@@ -1,7 +1,7 @@
 export class ChatDto {
     constructor({
-        schedule,            
-        groupComposition,   
+        schedule,
+        groupComposition,
         purpose,
         duration,
         budget,
@@ -16,14 +16,10 @@ export class ChatDto {
         recommendationType,
         freeTime,
         importantFactors,
-       destination1,
-       destination2,
-       point1,
-       point2,
-       point3
+       destinations,
     }) {
-        this.schedule = schedule;             
-        this.groupComposition = groupComposition;  
+        this.schedule = schedule;
+        this.groupComposition = groupComposition;
         this.purpose = purpose;
         this.duration = duration;
         this.budget = budget;
@@ -38,10 +34,16 @@ export class ChatDto {
         this.recommendationType = recommendationType;
         this.freeTime = freeTime;
         this.importantFactors = importantFactors;
-        this.destination1=destination1;
-        this.destination2=destination2;
-        this.point1=point1;
-        this.point2=point2;
-        this.point3=point3;
+        this.destinations=destinations;
     }
+}
+
+export class destinationDto{
+    constructor(
+       {region,
+           city,
+           points}
+    ){this.region=region;
+        this.city=city;
+        this.points=points;}
 }
