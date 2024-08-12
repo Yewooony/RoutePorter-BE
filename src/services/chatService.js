@@ -1,6 +1,6 @@
 // src/services/TravelService.js
 import chatProvider from '../providers/chatProvider.js';
-import { parseTravelRecommendations } from '../utils/parser.js';
+import { parseTravelRecommendations, parseTravelRoute } from '../utils/parser.js';
 
 class chatService {
     async getTravelRecommendations(answers) {
@@ -34,15 +34,42 @@ class chatService {
         `;
 
         const response = await chatProvider.getChatGPTResponse(prompt);
-          // Log the raw response
+        // Log the raw response
         console.log(response);
 
-          // Parse the response and log the parsed result
+        // Parse the response and log the parsed result
         const recommendations = parseTravelRecommendations(response);
         console.log('Parsed travel recommendations:', recommendations);
-  
+
         return recommendations;
     }
+    async getDetailedTravelInfo(destinations) {
+        const prompt = `
+       
+        여행 계획: ${destinations.region} - ${destinations.city}
+        특징: ${destinations.points[0]}, ${destinations.points[1]}, ${destinations.points[2]}
+        
+
+        위에서 언급된 각 여행지에 대해 여행 루트를 작성합니다. 부가적인 말 없이 다음 정보를 다음과 같이 제공해 주세요:
+        [일차]
+        - 장소명
+        - 영업 시간
+        - 주변에 더 방문할 만한 추천 명소
+        - 주변 인기 있는 메뉴
+        - 특별한 방문 팁
+    `;
+
+        try {
+            const response = await chatProvider.getChatGPTResponse(prompt);
+            const route = parseTravelRoute(response);
+            // return response;
+            return route;
+        } catch (error) {
+            console.error('Detailed travel info error:', error.message);
+            throw error;
+        }
+    }
 }
+
 
 export default new chatService();

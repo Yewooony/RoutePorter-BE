@@ -148,7 +148,8 @@
           "specialNeeds",
           "recommendationType",
           "freeTime",
-          "importantFactors"
+          "importantFactors",
+          "destinations"
         ]
       },
       "TravelRecommendations": {
