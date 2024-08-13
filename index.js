@@ -27,10 +27,6 @@ app.use(chatRoutes);
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
-// app.get('/routes', (req, res)=>{
-//     res.send('작동 중');
-//     })
-
 // 서버 시작
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
