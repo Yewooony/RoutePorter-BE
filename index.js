@@ -25,24 +25,19 @@ app.use(express.urlencoded({ extended: true }));
 // 라우터 설정
 app.use('/routes', route);
 app.use(chatRoutes);
-//<<<<<<< HEAD
+
 app.use(shareRoutes);
-//=======
+
 // 라우터 설정
 app.use('/', askRoute);
-//>>>>>>> 3f0c138b76d100f47c7f38489eda2c5c86bcd9e7
+
 
 // Swagger 문서 설정
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
-// app.get('/routes', (req, res)=>{
-//     res.send('작동 중');
-//     })
-// 기본 라우트
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
+// 서버 시작
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
-
-
 
