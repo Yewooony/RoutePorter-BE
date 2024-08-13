@@ -1,4 +1,4 @@
-export class ChatDto {
+export class ListDto {
     constructor({
         schedule,
         groupComposition,
@@ -16,7 +16,6 @@ export class ChatDto {
         recommendationType,
         freeTime,
         importantFactors,
-       destinations,
     }) {
         this.schedule = schedule;
         this.groupComposition = groupComposition;
@@ -34,17 +33,5 @@ export class ChatDto {
         this.recommendationType = recommendationType;
         this.freeTime = freeTime;
         this.importantFactors = importantFactors;
-        this.destinations=destinations;
-    }
-}
-
-export class destinationDto{
-    constructor(
-       {region,
-           city,
-           points}
-    ){this.region=region;
-        this.city=city;
-        this.points=points;
     }
 }
