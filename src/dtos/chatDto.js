@@ -3,9 +3,7 @@ export class ChatDto {
         schedule,
         groupComposition,
         purpose,
-        duration,
         budget,
-        climate,
         keyElement,
         accommodation,
         transport,
@@ -16,14 +14,12 @@ export class ChatDto {
         recommendationType,
         freeTime,
         importantFactors,
-       destinations,
+        destinations,
     }) {
         this.schedule = schedule;
         this.groupComposition = groupComposition;
         this.purpose = purpose;
-        this.duration = duration;
         this.budget = budget;
-        this.climate = climate;
         this.keyElement = keyElement;
         this.accommodation = accommodation;
         this.transport = transport;
