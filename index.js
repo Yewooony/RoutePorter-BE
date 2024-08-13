@@ -5,13 +5,15 @@ import swaggerFile from './swagger/swagger-output.json' assert { type: 'json' };
 import dotenv from 'dotenv';
 import chatRoutes from './src/routes/chatRoutes.js'; // .js 확장자 주의
 
-
-
+import shareRoutes from './src/routes/shareRoutes.js';
+import multer from 'multer';
 
 dotenv.config();
 
 const app = express();
 const port = 3000;
+
+const upload = multer({ dest: 'uploads/' }); 
 
 // 미들웨어 설정
 app.use(express.json());
@@ -21,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // 라우터 설정
 app.use(chatRoutes);
+app.use(shareRoutes);
 
 // Swagger 문서 설정
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile))
