@@ -9,9 +9,7 @@ class chatService {
             일정 정보: ${answers.schedule} 
             상세 인원 정보: ${answers.groupComposition} 
             여행의 목적: ${answers.purpose}
-            여행 기간: ${answers.duration}
             여행 예산: ${answers.budget}
-            선호하는 기후: ${answers.climate}
             여행 중 가장 중요하게 생각하는 요소: ${answers.keyElement}
             선호하는 숙박 시설: ${answers.accommodation}
             선호하는 이동 수단: ${answers.transport}
