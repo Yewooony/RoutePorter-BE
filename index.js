@@ -3,6 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './swagger/swagger-output.json' assert { type: 'json' };
 
 import dotenv from 'dotenv';
+import route from './src/routes/route.js';
 import chatRoutes from './src/routes/chatRoutes.js'; // .js 확장자 주의
 
 import shareRoutes from './src/routes/shareRoutes.js';
@@ -20,8 +21,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-
 // 라우터 설정
+app.use('/routes', route);
 app.use(chatRoutes);
 app.use(shareRoutes);
 
@@ -33,3 +34,5 @@ app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+
