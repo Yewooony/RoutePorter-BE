@@ -1,31 +1,41 @@
-import OpenAI from 'openai';
-import dotenv from 'dotenv';
+// 여기 제리가 지피티한테 받은 그 리스트에서 받아야하는데 음 어케할지 모르겠어여
 
-dotenv.config();
-
-class listProvider {
-    constructor() {
-        this.openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY
-        });
+const lists = [
+    {
+        region: '강원도',
+        district: '속초시',
+        features: ['해변', '자연 경관', '다양한 해산물 요리']
+    },
+    {
+        region: '경상남도',
+        district: '거제시',
+        features: ['깨끗한 해변', '수목원', '신선한 해산물']
+    },
+    {
+        region: '전라남도',
+        district: '여수시',
+        features: ['낭만적인 야경', '해상 케이블카', '해산물 요리']
+    },
+    {
+        region: '경기도',
+        district: '가평군',
+        features: ['호수 경치', '수상 레포츠', '맛집']
+    },
+    {
+        region: '전라북도',
+        district: '전주시',
+        features: ['전주 한옥마을', '풍성한 먹거리', '도보 여행']
+    },
+    {
+        region: '충청남도',
+        district: '태안군',
+        features: ['자연유람', '해안 절경', '조개구이']
+    },
+    {
+        region: '경상북도',
+        district: '경주시',
+        features: ['역사 유적지', '전통 한식', '자전거 여행']
     }
+];
 
-    async getTravelRecommendations(prompt) {
-        try {
-            const response = await this.openai.chat.completions.create({
-                model: 'gpt-4o',
-                messages: [
-                    { role: 'system', content: 'You are a helpful assistant who provides travel recommendations based on user preferences.' },
-                    { role: 'user', content: prompt }
-                ],
-            });
-
-            return response.choices[0].message.content;
-        } catch (error) {
-            console.error('ChatGPT 요청 중 오류:', error.response ? error.response.data : error.message);
-            throw error;
-        }
-    }
-}
-
-export default new listProvider();
+module.exports = lists;

@@ -1,8 +1,8 @@
 import express from 'express';
-import { getTravelList } from '../controllers/listController.js';
+import { getRecommendations } from '../controllers/chatController.js';
 
 const router = express.Router();
 
-router.post('/list', getTravelList);
+router.get('/list', getRecommendations);
 
 export default router;
