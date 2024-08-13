@@ -1,5 +1,5 @@
-// shareRoutes.js
 import express from 'express';
+import {getDetailedRoute} from "../controllers/chatController.js";
 import { getImageURL } from '../controllers/shareController.js';
 import multer from 'multer';
 import path from 'path';
@@ -21,6 +21,8 @@ const upload = multer({ storage: storage });
 const router = express.Router();
 
 // 이미지 파일을 받아 처리하는 라우트 설정
-router.post('/routes/share', upload.single('image'), getImageURL);
+router.post('/share', upload.single('image'), getImageURL);
+
+router.post('/', getDetailedRoute);
 
 export default router;

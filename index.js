@@ -1,13 +1,11 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './swagger/swagger-output.json' assert { type: 'json' };
-import { specs } from './config/swagger.config.js';
 import dotenv from 'dotenv';
-import route from './src/routes/route.js';
-import chatRoutes from './src/routes/chatRoutes.js'; // .js 확장자 주의
-import askRoute from './src/routes/chatgpt.js'; // .js 확장자 주의
+import route from './src/routes/routeRoutes.js';
+import chatRoutes from './src/routes/chatRoutes.js'; 
+import askRoute from './src/routes/detailRoutes.js'; 
 
-import shareRoutes from './src/routes/shareRoutes.js';
 import multer from 'multer';
 
 dotenv.config();
@@ -25,11 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // 라우터 설정
 app.use('/routes', route);
 app.use(chatRoutes);
-
-app.use(shareRoutes);
-
-// 라우터 설정
-app.use('/', askRoute);
+app.use(askRoute);
 
 
 // Swagger 문서 설정
