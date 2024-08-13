@@ -189,8 +189,7 @@
   
 },    
 
-    
-    
+
     "/detailed-travel-info": {
       "post": {
         "summary": "여행지 상세 정보 조회",
