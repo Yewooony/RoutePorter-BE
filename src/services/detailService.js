@@ -1,6 +1,6 @@
 import { OpenAI } from "openai";
 import dotenv from "dotenv";
-import DetailDTO from "../dtos/detail.dto.js";
+import DetailDTO from "../dtos/detailDto.js";
 
 dotenv.config();
 
@@ -60,4 +60,4 @@ class GptService {
   }
 }
 
-export default GptService;
+export default new GptService();
