@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import DetailDTO from "../dtos/detail.dto.js";
+import DetailDTO from "../dtos/detailDto.js";
 import axios from "axios";
 import { jsonToQueryString } from "../utils/common.js";
 

@@ -1,11 +1,11 @@
-import DetailDTO from "../dtos/detail.dto.js";
-import GptService from "../services/gpt.service.js";
-import TourService from "../services/tour.service.js";
+import DetailDTO from "../dtos/detailDto.js";
+import GptService from "../services/detailService.js";
+import TourService from "../services/tourService.js";
 
 /**
  * 
  * @param {Request} req 
- * @param {Response} res 
+ * @param {Response} res  
  */
 export async function getDetail(req, res) {
   const detailDTO = new DetailDTO(req.body);

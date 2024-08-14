@@ -1,5 +1,5 @@
 import express from 'express';
-import { getDetail } from '../controllers/chatgpt.js'
+import { getDetail } from '../controllers/detailController.js'
 const router = express.Router();
 
 router.get('/detail', getDetail);
