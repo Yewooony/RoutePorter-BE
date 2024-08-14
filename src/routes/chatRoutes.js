@@ -4,5 +4,6 @@ import { getRecommendations } from '../controllers/chatController.js';
 const router = express.Router();
 
 router.post('/chat', getRecommendations);
+router.get('/list', getRecommendations);
 
 export default router;
