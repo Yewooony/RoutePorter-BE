@@ -60,4 +60,4 @@ class GptService {
   }
 }
 
-export default new GptService();
+export default GptService;
