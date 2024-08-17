@@ -2,6 +2,7 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './swagger/swagger-output.json' assert { type: 'json' };
 import dotenv from 'dotenv';
+import cors from 'cors';
 import route from './src/routes/routeRoutes.js';
 import chatRoutes from './src/routes/chatRoutes.js'; 
 import askRoute from './src/routes/detailRoutes.js'; 
