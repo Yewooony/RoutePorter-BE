@@ -1,33 +1,33 @@
-const nodeExternals = require("webpack-node-externals");
-const path = require("path");
+import nodeExternals from 'webpack-node-externals';
+import path from 'path';
 
-module.exports = {
-    mode: "development",
-    context: __dirname + '/src',
+export default {
+    mode: 'development',
+    context: path.resolve(__dirname, 'src'),
     entry: {
         app: '../index.js',
     },
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "main.js",
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js',
     },
     module: {
         rules: [
-        {
-            test: /\.js$/,
-            use: {
-            loader: "babel-loader",
-            options: {
-                presets: ["@babel/preset-env"],
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
+                exclude: /node_modules/,
             },
-            },
-            exclude: /node_modules/,
-        },
         ],
     },
-    target: "node",
+    target: 'node',
     externalsPresets: {
         node: true,
     },
     externals: [nodeExternals()],
-    };
+};
