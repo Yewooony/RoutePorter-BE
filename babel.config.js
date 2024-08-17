@@ -11,6 +11,6 @@ export default {
     '@babel/preset-env', // 최신 JavaScript 기능을 지원하는 프리셋
   ],
   plugins: [
-    '@babel/plugin-syntax-import-attributes', // 'import ... assert { type: 'json' }' 구문 지원
+     '@babel/plugin-transform-modules-commonjs'
   ],
 };
