@@ -1,6 +1,6 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
-import swaggerFile from './swagger/swagger-output.json' assert { type: 'json' };
+const swaggerFile = require('./swagger/swagger-output.json'); // require를 사용하여 JSON 파일 가져오기
 import dotenv from 'dotenv';
 import cors from 'cors';
 import route from './src/routes/routeRoutes.js';
