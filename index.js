@@ -36,7 +36,7 @@ app.use('/api',chatRoutes);
 app.use('/api',askRoute);
 
 
-app.get('/', (req, res, next) => {
+app.get('/api', (req, res, next) => {
     res.send(response(status.SUCCESS, "루트 페이지!"));
 })
 
