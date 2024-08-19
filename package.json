@@ -2,7 +2,6 @@
   "name": "routeporter",
   "version": "1.0.0",
   "main": "app.js",
- 
   "scripts": {
     "start:dev": "nodemon --exec babel-node index.js",
     "start:dist": "webpack --mode production & node ./dist/main.js",
