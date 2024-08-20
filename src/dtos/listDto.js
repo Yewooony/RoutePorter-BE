@@ -11,5 +11,3 @@ class ListDTO {
 }
 
 export default ListDTO;
-
-// 아니 이것도 detail.dto랑 겹치네여 진짜 머죠???!? 
