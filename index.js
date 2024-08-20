@@ -41,7 +41,7 @@ app.get('/api', (req, res, next) => {
 })
 
 // Swagger 문서 설정
-app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+app.use('/api/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
 // 서버 시작
