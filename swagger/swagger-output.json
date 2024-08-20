@@ -16,7 +16,7 @@
     }
   ],
   "paths": {
-    "/chat": {
+    "/api/chat": {
       "post": {
         "summary": "여행지 추천 요청",
         "description": "사용자 요청에 따라 추천 여행지를 제공합니다.",
@@ -47,7 +47,7 @@
         }
       }
     },
-    "/routes": {
+    "/api/routes": {
       "post": {
         "summary": "여행지 루트 조회",
         "description": "주어진 여행지 정보를 기반으로 상세 여행 루트를 제공합니다.",
@@ -78,7 +78,7 @@
         }
       }
     },
-    "/routes/share": {
+    "/api/routes/share": {
       "post": {
         "summary": "여행지 루트 공유",
         "description": "사용자가 생성한 여행지 루트를 공유하는 기능으로, 공유된 루트는 이미지로 저장되고 URL이 제공됩니다.",
@@ -112,7 +112,7 @@
         }
       }
     },
-    "/detail": {
+    "/api/detail": {
       "get": {
         "summary": "여행지 상세 정보 요청",
         "description": "여행지에 대한 상세 정보를 제공합니다. 여행지의 교통, 숙박, 음식, 그리고 주요 관광명소에 대한 정보를 포함합니다.",
