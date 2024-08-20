@@ -31,12 +31,12 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // 라우터 설정
-app.use('/routes', route);
-app.use('/', chatRoutes);
-app.use('/', askRoute);
+app.use('/api/routes', route);
+app.use('/api', chatRoutes);
+app.use('/api', askRoute);
 
 
-app.get('/', (req, res, next) => {
+app.get('/api', (req, res, next) => {
     res.send(response(status.SUCCESS, "루트 페이지!"));
 })
 
