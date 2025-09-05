@@ -1,11 +1,11 @@
-# 깃 협업 방법
+# RoutePorter
 
+##서비스 소개
+AI가 추천해주는 개인화 맞춤 여행지
 
-Fork 눌러서 개인 레포로 받아오기 -> 개인 레포에서 작업 -> 기능 구현 완료 시 커밋하고 푸시하면 개인 레포에 반영 -> pull request 클릭 후, new pull request  -> routeporter 레포의 develop브랜치로 !꼭! 선택하고 pr 생성 -> 팀장이 이거 승인해서 develop 브랜치에 머지 -> 오류 없으면 main 으로 푸시
+##MVP
 
-기본 작업은 develop 에서 작업하고 완벽하게 기능이 돌아갈 때만 main으로 작업물 푸시
-
-
-routeporter pull 명령어
-
-git pull upstream develop
+1. AI와 간단한 질문들에 문답을 하며, AI에게 내 취향을 가르쳐주는 기능
+2. 취향 기반으로 다양한 여행지를 추천하는 기능
+3. 여행지의 간단한 소개와 다양한 정보들을 소개하는 기능
+4. 여행지의 다양한 정보와 내 취향을 활용한 여행 루트 추천 기능
